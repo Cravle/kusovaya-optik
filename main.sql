@@ -55,3 +55,46 @@ Create table Shops
 	Foreign key (OwnerID) References Owners(OwnerID),
 )
 go
+
+Create table Kategory (
+	KategoryID int not null Identity(1,1) Primary key,
+	Naz int not null,
+)
+go
+
+Create table Products (
+	ProductID int not null Identity(1,1) Primary key,
+	Naz nvarchar(30) not null,
+	KategoryID int not null,
+	Counts int not null,
+	Foreign key (KategoryID) References Kategory(KategoryID)
+)
+go
+
+Create table Positions (
+	PositionID int not null Identity(1,1) Primary key,
+	Naz nvarchar(30) not null,
+	StandartHours int not null,
+	Rate int not null,
+	SalePercent int not null
+)
+
+Create table Managers (
+	ManagerID int not null Identity(1,1) Primary key,
+	Fam nvarchar(30) not null,
+	Iniz nvarchar(4) not null,
+	PositionID int not null,
+	Foreign key (PositionID) References Positions(PositionID)
+)
+
+Create table Orders (
+	OrderID int not null Identity(1,1) Primary key,
+	Dat date not null,
+	ProductID int not null,
+	ShopID int not null,
+	ManagerID int not null,
+	AddFee int not null,
+	Foreign key (ManagerID) References Managers(ManagerID),
+	Foreign key (ProductID) References Products(ProductID),
+	Foreign key (ShopID) References Shops(ShopID)
+)
