@@ -52,9 +52,16 @@ Create table Shops
 	AdressID int not null,
 	OwnerID int not null,
 	Foreign key (AdressID) References Adress(AdressID),
-	Foreign key (OwnerID) References Owners(OwnerID),
 )
 go
+
+Create table TabShopToOwner
+(
+ShopID int foreign key references Shops(ShopID ),
+OwnerID int foreign key references Owners(OwnerID ),
+Primary Key (ShopID, OwnerID )
+)
+GO
 
 Create table Kategory (
 	KategoryID int not null Identity(1,1) Primary key,
