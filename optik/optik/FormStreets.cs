@@ -66,7 +66,7 @@ namespace optik
 
             while (true)
             {
-                if (searchedString["StreetID"].ToString() == insertedID)
+                if (searchedString["UlicID"].ToString() == insertedID)
                 {
                     textBox3.Text = searchedString["Naz"].ToString();
                     return;

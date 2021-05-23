@@ -264,6 +264,32 @@ end
 
 go
 
+IF OBJECT_ID ('optik.CreatingOrderPriceDelete', 'TR') IS NOT NULL  
+   DROP TRIGGER optik.CreatingOrderPriceDelete;  
+
+go
+
+Create trigger CreatingOrderPriceDelete
+On OrderDetail
+After delete
+AS
+Begin
+	declare @price int 
+	Select @price = (
+		Select sum(products.Price) from Products, OrderDetail, Orders
+		where products.ProductID = OrderDetail.ProductID and
+		OrderDetail.OrderID = Orders.OrderID and
+		Orders.OrderID in (select OrderID from deleted)
+		)		
+		update Orders
+		set TotalPrice = @price 
+		where Orders.OrderID in (select OrderID from deleted)
+
+	
+end
+
+go
+
 IF OBJECT_ID ('optik.NotMoreCount', 'TR') IS NOT NULL  
    DROP TRIGGER optik.NotMoreCount;  
 GO
@@ -302,6 +328,13 @@ go
 
 insert into Orders(Dat, ManagerID) values('2021-05-15',1)
 insert into Orders(Dat, ManagerID) values('2021-02-15',2)
+insert into Orders(Dat, ManagerID) values('2021-03-15',4)
+insert into Orders(Dat, ManagerID) values('2021-02-16',3)
+insert into Orders(Dat, ManagerID) values('2021-02-17',1)
+insert into Orders(Dat, ManagerID) values('2021-02-18',1)
+insert into Orders(Dat, ManagerID) values('2021-02-19',3)
+insert into Orders(Dat, ManagerID) values('2021-02-20',3)
+insert into Orders(Dat, ManagerID) values('2021-02-17',4)
 go
 
 insert into OrderDetail(OrderID, ProductID) values(1,2)

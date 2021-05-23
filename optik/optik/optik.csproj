@@ -197,6 +197,9 @@
     <EmbeddedResource Include="FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductsThou.resx">
+      <DependentUpon>FormProductsThou.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShops.resx">
       <DependentUpon>FormShops.cs</DependentUpon>
     </EmbeddedResource>

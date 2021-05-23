@@ -32,13 +32,13 @@ namespace optik
             this.components = new System.ComponentModel.Container();
             this.buttonBack = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.optikDataSet = new optik.optikDataSet();
-            this.positionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.positionsTableAdapter = new optik.optikDataSetTableAdapters.PositionsTableAdapter();
             this.positionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoursPerWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.positionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.optikDataSet = new optik.optikDataSet();
+            this.positionsTableAdapter = new optik.optikDataSetTableAdapters.PositionsTableAdapter();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,8 +61,8 @@ namespace optik
             this.label10 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -92,20 +92,6 @@ namespace optik
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(884, 150);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // optikDataSet
-            // 
-            this.optikDataSet.DataSetName = "optikDataSet";
-            this.optikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // positionsBindingSource
-            // 
-            this.positionsBindingSource.DataMember = "Positions";
-            this.positionsBindingSource.DataSource = this.optikDataSet;
-            // 
-            // positionsTableAdapter
-            // 
-            this.positionsTableAdapter.ClearBeforeFill = true;
             // 
             // positionIDDataGridViewTextBoxColumn
             // 
@@ -140,6 +126,20 @@ namespace optik
             this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
             this.rateDataGridViewTextBoxColumn.Width = 125;
             // 
+            // positionsBindingSource
+            // 
+            this.positionsBindingSource.DataMember = "Positions";
+            this.positionsBindingSource.DataSource = this.optikDataSet;
+            // 
+            // optikDataSet
+            // 
+            this.optikDataSet.DataSetName = "optikDataSet";
+            this.optikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // positionsTableAdapter
+            // 
+            this.positionsTableAdapter.ClearBeforeFill = true;
+            // 
             // buttonCancel
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.Red;
@@ -150,6 +150,7 @@ namespace optik
             this.buttonCancel.TabIndex = 18;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSearch
             // 
@@ -161,6 +162,7 @@ namespace optik
             this.buttonSearch.TabIndex = 19;
             this.buttonSearch.Text = "Поиск";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBox1
             // 
@@ -254,6 +256,7 @@ namespace optik
             this.button1.TabIndex = 25;
             this.button1.Text = "Определить";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox5
             // 
@@ -286,11 +289,11 @@ namespace optik
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(614, 259);
+            this.label7.Location = new System.Drawing.Point(602, 264);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 29);
+            this.label7.Size = new System.Drawing.Size(123, 29);
             this.label7.TabIndex = 21;
-            this.label7.Text = "TownID";
+            this.label7.Text = "PositionID";
             // 
             // label8
             // 
@@ -298,9 +301,9 @@ namespace optik
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(599, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(271, 29);
+            this.label8.Size = new System.Drawing.Size(319, 29);
             this.label8.TabIndex = 22;
-            this.label8.Text = "Данные о городе по id";
+            this.label8.Text = "Данные о должности по id";
             // 
             // label9
             // 
@@ -372,8 +375,8 @@ namespace optik
             this.Text = "FormPositions";
             this.Load += new System.EventHandler(this.FormPositions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,5 +16,22 @@ namespace optik
         {
             InitializeComponent();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormManagersKH_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'optikDataSet.ManagersInKh' table. You can move, or remove it, as needed.
+            this.managersInKhTableAdapter.Fill(this.optikDataSet.ManagersInKh);
+
+        }
     }
 }

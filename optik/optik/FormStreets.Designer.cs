@@ -32,11 +32,11 @@ namespace optik
             this.components = new System.ComponentModel.Container();
             this.buttonBack = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.optikDataSet = new optik.optikDataSet();
-            this.streetsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.streetsTableAdapter = new optik.optikDataSetTableAdapters.StreetsTableAdapter();
             this.ulicIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.optikDataSet = new optik.optikDataSet();
+            this.streetsTableAdapter = new optik.optikDataSetTableAdapters.StreetsTableAdapter();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -49,8 +49,8 @@ namespace optik
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.streetsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -79,20 +79,6 @@ namespace optik
             this.dataGridView1.Size = new System.Drawing.Size(601, 150);
             this.dataGridView1.TabIndex = 5;
             // 
-            // optikDataSet
-            // 
-            this.optikDataSet.DataSetName = "optikDataSet";
-            this.optikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // streetsBindingSource
-            // 
-            this.streetsBindingSource.DataMember = "Streets";
-            this.streetsBindingSource.DataSource = this.optikDataSet;
-            // 
-            // streetsTableAdapter
-            // 
-            this.streetsTableAdapter.ClearBeforeFill = true;
-            // 
             // ulicIDDataGridViewTextBoxColumn
             // 
             this.ulicIDDataGridViewTextBoxColumn.DataPropertyName = "UlicID";
@@ -109,6 +95,20 @@ namespace optik
             this.nazDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nazDataGridViewTextBoxColumn.Name = "nazDataGridViewTextBoxColumn";
             this.nazDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // streetsBindingSource
+            // 
+            this.streetsBindingSource.DataMember = "Streets";
+            this.streetsBindingSource.DataSource = this.optikDataSet;
+            // 
+            // optikDataSet
+            // 
+            this.optikDataSet.DataSetName = "optikDataSet";
+            this.optikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // streetsTableAdapter
+            // 
+            this.streetsTableAdapter.ClearBeforeFill = true;
             // 
             // buttonCancel
             // 
@@ -187,9 +187,9 @@ namespace optik
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(693, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 29);
+            this.label3.Size = new System.Drawing.Size(77, 29);
             this.label3.TabIndex = 16;
-            this.label3.Text = "TownID";
+            this.label3.Text = "UlicID";
             // 
             // label2
             // 
@@ -243,8 +243,8 @@ namespace optik
             this.Text = "FormStreets";
             this.Load += new System.EventHandler(this.FormStreets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.streetsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

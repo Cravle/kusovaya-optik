@@ -32,12 +32,12 @@ namespace optik
             this.components = new System.ComponentModel.Container();
             this.buttonBack = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.optikDataSet = new optik.optikDataSet();
-            this.shopsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shopsTableAdapter = new optik.optikDataSetTableAdapters.ShopsTableAdapter();
             this.shopIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datOpenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shopsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.optikDataSet = new optik.optikDataSet();
+            this.shopsTableAdapter = new optik.optikDataSetTableAdapters.ShopsTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@ namespace optik
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -74,22 +74,8 @@ namespace optik
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 191);
+            this.dataGridView1.Size = new System.Drawing.Size(634, 191);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // optikDataSet
-            // 
-            this.optikDataSet.DataSetName = "optikDataSet";
-            this.optikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // shopsBindingSource
-            // 
-            this.shopsBindingSource.DataMember = "Shops";
-            this.shopsBindingSource.DataSource = this.optikDataSet;
-            // 
-            // shopsTableAdapter
-            // 
-            this.shopsTableAdapter.ClearBeforeFill = true;
             // 
             // shopIDDataGridViewTextBoxColumn
             // 
@@ -115,6 +101,20 @@ namespace optik
             this.adressIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adressIDDataGridViewTextBoxColumn.Name = "adressIDDataGridViewTextBoxColumn";
             this.adressIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // shopsBindingSource
+            // 
+            this.shopsBindingSource.DataMember = "Shops";
+            this.shopsBindingSource.DataSource = this.optikDataSet;
+            // 
+            // optikDataSet
+            // 
+            this.optikDataSet.DataSetName = "optikDataSet";
+            this.optikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // shopsTableAdapter
+            // 
+            this.shopsTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -204,8 +204,8 @@ namespace optik
             this.Text = "FormShops";
             this.Load += new System.EventHandler(this.FormShops_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shopsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.optikDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

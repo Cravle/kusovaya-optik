@@ -16,5 +16,17 @@ namespace optik
         {
             InitializeComponent();
         }
+
+        private void FormOrdersManagers_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'optikDataSet.ManagersAndOrders' table. You can move, or remove it, as needed.
+            this.managersAndOrdersTableAdapter.Fill(this.optikDataSet.ManagersAndOrders);
+
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

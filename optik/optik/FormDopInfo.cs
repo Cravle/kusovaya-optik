@@ -16,5 +16,22 @@ namespace optik
         {
             InitializeComponent();
         }
+
+        private void FormDopInfo_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'optikDataSet.ProductInfoToDetail' table. You can move, or remove it, as needed.
+            this.productInfoToDetailTableAdapter.Fill(this.optikDataSet.ProductInfoToDetail);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
